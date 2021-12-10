@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Shopping</title>
-    
-</head>
-<body>
-    {% block content  %}
-    {% endblock content %}
-</body>
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+        <title>{% block title %}{% endblock title %} :: Shopping.</title>
+        {% block styles %}
+        <!-- General CSS Files -->
+        <link rel="stylesheet" href="{% static 'css/app.min.css' %}">
+        <!-- Template CSS -->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/components.css' %}">
+        <link rel='shortcut icon' type='image/x-icon' href="{% static 'img/favicon.ico' %}" />
+        {% endblock styles %}
+        <link rel="stylesheet" href="{% static 'bundles/izitoast/css/iziToast.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+        
+    </head>
+        <body>
+            {% block content  %}
+            {% endblock content %}
+            {% block scripts %}
+            <!-- General JS Scripts -->
+            <script src="{% static 'js/app.min.js' %}"></script>
+            <!-- JS Libraies -->
+            <script src="{% static 'bundles/apexcharts/apexcharts.min.js' %}"></script>
+            <!-- Page Specific JS File -->
+            <script src="{% static 'js/page/index.js' %}"></script>
+            <!-- Template JS File -->
+            <script src="{% static 'js/scripts.js' %}"></script>
+            <script src="{% static 'js/custom.js' %}"></script>
+            {% endblock scripts %}
+            <script src="{% static 'bundles/izitoast/js/iziToast.min.js' %}"></script>
+            <script src="{% static 'js/cart.js' %}"></script>
+        </body>
 </html>
+
